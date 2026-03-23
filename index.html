@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simone Weil</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Georgia", serif;
+  background: #0f0f0f;
+  color: #eaeaea;
+}
+
+.header {
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid #333;
+}
+
+.header img {
+  width: 90px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.header h1 { margin: 0; font-size: 22px; }
+.header p { font-size: 13px; color: #aaa; }
+
+.container { padding: 15px; }
+
+.card {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 12px;
+  transition: 0.2s;
+}
+
+.card:hover { border-color: #c9a86a; }
+.card:active { transform: scale(0.97); }
+
+.title { font-weight: bold; font-size: 16px; }
+
+.text {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #ccc;
+  display: none;
+}
+
+.card.open .text { display: block; }
+
+.progress { margin-top: 20px; }
+.bar { height: 6px; background: #333; border-radius: 5px; }
+.fill {
+  height: 100%;
+  width: 0%;
+  background: #c9a86a;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+/* TIRITAS MEJORADAS */
+.strip {
+  position: fixed;
+  padding: 14px;
+  background: linear-gradient(145deg,#3a3a3a,#222);
+  border: 1px solid #555;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: grab;
+  z-index: 5;
+  transition: 0.2s;
+}
+
+.strip:active {
+  transform: scale(1.1) rotate(3deg);
+}
+
+.revealed {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* INFO NUEVA */
+.revealBox {
+  position: fixed;
+  background: #111;
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid #555;
+  width: 220px;
+  font-size: 14px;
+  display: none;
+  z-index: 10;
+}
+
+.revealBox.show {
+  display: block;
+}
+
+/* posiciones originales */
+#s1 { top: 40%; left: 10px; }
+#s2 { bottom: 20px; left: 30%; }
+#s3 { top: 10px; right: 20px; }
+
+#r1 { top: 35%; left: 25%; }
+#r2 { bottom: 25%; left: 45%; }
+#r3 { top: 15%; right: 30%; }
+
+.popup {
+  position: fixed;
+  left: 10%;
+  width: 80%;
+  top: 30%;
+  background: #111;
+  padding: 20px;
+  border-radius: 12px;
+  display: none;
+  z-index: 10;
+}
+
+.popup.show { display: block; }
+
+button {
+  margin-top: 10px;
+  padding: 10px;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 8px;
+}
+
+.quote {
+  margin-top: 20px;
+  padding: 15px;
+  border-left: 3px solid #c9a86a;
+  color: #ddd;
+  font-style: italic;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <img src="simone-weil.png">
+  <h1>Simone Weil</h1>
+  <p>Filósofa, mística y activista radical (1909–1943)</p>
+</div>
+
+<div class="container">
+
+  <div class="card" onclick="toggle(this)">
+    <div class="title">¿Quién fue?</div>
+    <div class="text">
+      Simone Weil fue una filósofa francesa extremadamente intensa. No solo pensaba sobre el sufrimiento: se obligaba a vivirlo.
+      Fue profesora, activista, obrera y pensadora espiritual.
+    </div>
+  </div>
+
+  <div class="card" onclick="toggle(this)">
+    <div class="title">Vida extrema</div>
+    <div class="text">
+      Trabajó en fábricas para experimentar el dolor obrero.
+      Se unió a la Guerra Civil Española.
+      Se negó a comer más que los soldados durante la Segunda Guerra Mundial.
+    </div>
+  </div>
+
+  <div class="card" onclick="toggle(this)">
+    <div class="title">Cómo murió</div>
+    <div class="text">
+      Murió en 1943 con solo 34 años.
+      Su cuerpo estaba debilitado porque decidió limitar su comida por solidaridad.
+    </div>
+  </div>
+
+  <div class="card" onclick="toggle(this)">
+    <div class="title">Ideas principales</div>
+    <div class="text">
+      - La atención es el acto moral más puro.
+      - El sufrimiento puede destruir el "yo".
+      - El poder tiende a corromper.
+      - La verdad requiere sacrificio.
+    </div>
+  </div>
+
+  <div class="card" onclick="toggle(this)">
+    <div class="title">La gravedad y la gracia</div>
+    <div class="text">
+      Su obra más famosa.
+      Mezcla filosofía y espiritualidad.
+      Habla de cómo el sufrimiento puede vaciar el ego.
+    </div>
+  </div>
+
+  <div class="card" onclick="toggle(this)">
+    <div class="title">Echar raíces</div>
+    <div class="text">
+      pertenencia, identidad, verdad, justicia.
+    </div>
+  </div>
+
+  <div class="card" onclick="toggle(this)">
+    <div class="title">Otros escritos</div>
+    <div class="text">
+      diarios de fábrica, La Ilíada o el poema de la fuerza, Cuadernos.
+    </div>
+  </div>
+
+  <div class="card" onclick="toggle(this)">
+    <div class="title">Dato curioso</div>
+    <div class="text">
+      Intentaba eliminar su ego constantemente.
+    </div>
+  </div>
+
+  <div class="quote">
+    "La atención es la forma más rara y pura de generosidad."
+  </div>
+
+  <div class="progress">
+    <div class="bar">
+      <div class="fill" id="fill"></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- TIRITAS -->
+<div class="strip" id="s1">?</div>
+<div class="strip" id="s2">...</div>
+<div class="strip" id="s3">!</div>
+
+<!-- NUEVA INFO AL ARRASTRAR -->
+<div class="revealBox" id="r1">Vivía la filosofía como una obsesión personal.</div>
+<div class="revealBox" id="r2">Veía el sufrimiento como una puerta a la verdad.</div>
+<div class="revealBox" id="r3">Incluso hoy, muchos la ven como demasiado extrema.</div>
+
+<!-- POPUPS ORIGINALES -->
+<div class="popup" id="p1">
+Se obsesionaba con vivir la verdad.
+<br><button onclick="closePopup(this)">Cerrar</button>
+</div>
+
+<div class="popup" id="p2">
+El sufrimiento revela la realidad.
+<br><button onclick="closePopup(this)">Cerrar</button>
+</div>
+
+<div class="popup" id="p3">
+Filósofa demasiado extrema.
+<br><button onclick="closePopup(this)">Cerrar</button>
+</div>
+
+<script>
+let opened = 0;
+const total = 8;
+
+function toggle(el){
+  if(!el.classList.contains("open")) opened++;
+  el.classList.toggle("open");
+  update();
+}
+
+function update(){
+  let percent = Math.min((opened / total) * 100, 100);
+  document.getElementById("fill").style.width = percent + "%";
+}
+
+function openPopup(id){ document.getElementById(id).classList.add("show"); }
+function closePopup(el){ el.parentElement.classList.remove("show"); }
+
+/* DRAG + REVEAL */
+document.querySelectorAll(".strip").forEach((el, index) => {
+  let offsetX, offsetY, isDown = false;
+
+  el.addEventListener("mousedown", e => {
+    isDown = true;
+    offsetX = e.clientX - el.offsetLeft;
+    offsetY = e.clientY - el.offsetTop;
+  });
+
+  document.addEventListener("mousemove", e => {
+    if(!isDown) return;
+
+    el.style.left = (e.clientX - offsetX) + "px";
+    el.style.top = (e.clientY - offsetY) + "px";
+
+    if(Math.abs(e.movementX) > 8 || Math.abs(e.movementY) > 8){
+      el.classList.add("revealed");
+      document.getElementById("r"+(index+1)).classList.add("show");
+    }
+  });
+
+  document.addEventListener("mouseup", () => isDown = false);
+});
+</script>
+
+</body>
+</html>
