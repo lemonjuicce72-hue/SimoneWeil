@@ -65,7 +65,6 @@ body {
   transition: 0.3s;
 }
 
-/* TIRITAS MEJORADAS */
 .strip {
   position: fixed;
   padding: 14px;
@@ -76,6 +75,7 @@ body {
   cursor: grab;
   z-index: 5;
   transition: 0.2s;
+  touch-action: none;
 }
 
 .strip:active {
@@ -87,7 +87,6 @@ body {
   pointer-events: none;
 }
 
-/* INFO NUEVA */
 .revealBox {
   position: fixed;
   background: #111;
@@ -104,37 +103,15 @@ body {
   display: block;
 }
 
-/* posiciones originales */
 #s1 { top: 40%; left: 10px; }
 #s2 { bottom: 20px; left: 30%; }
 #s3 { top: 10px; right: 20px; }
+#s4 { top: 70%; right: 15px; }
 
 #r1 { top: 35%; left: 25%; }
 #r2 { bottom: 25%; left: 45%; }
 #r3 { top: 15%; right: 30%; }
-
-.popup {
-  position: fixed;
-  left: 10%;
-  width: 80%;
-  top: 30%;
-  background: #111;
-  padding: 20px;
-  border-radius: 12px;
-  display: none;
-  z-index: 10;
-}
-
-.popup.show { display: block; }
-
-button {
-  margin-top: 10px;
-  padding: 10px;
-  background: #333;
-  color: white;
-  border: none;
-  border-radius: 8px;
-}
+#r4 { top: 60%; right: 30%; }
 
 .quote {
   margin-top: 20px;
@@ -160,65 +137,62 @@ button {
   <div class="card" onclick="toggle(this)">
     <div class="title">¿Quién fue?</div>
     <div class="text">
-      Simone Weil fue una filósofa francesa extremadamente intensa. No solo pensaba sobre el sufrimiento: se obligaba a vivirlo.
-      Fue profesora, activista, obrera y pensadora espiritual.
+      Simone Weil fue una filósofa francesa obsesiva con la verdad.
+      No se quedaba en teorías: se metía de lleno en la realidad.
     </div>
   </div>
 
   <div class="card" onclick="toggle(this)">
     <div class="title">Vida extrema</div>
     <div class="text">
-      Trabajó en fábricas para experimentar el dolor obrero.
-      Se unió a la Guerra Civil Española.
-      Se negó a comer más que los soldados durante la Segunda Guerra Mundial.
+      Trabajó en fábricas, fue a la guerra y se autoimpuso sufrimiento.
     </div>
   </div>
 
   <div class="card" onclick="toggle(this)">
-    <div class="title">Cómo murió</div>
+    <div class="title">Relación con el dolor</div>
     <div class="text">
-      Murió en 1943 con solo 34 años.
-      Su cuerpo estaba debilitado porque decidió limitar su comida por solidaridad.
+      Para ella, el sufrimiento no era algo a evitar, sino algo que podía revelar la realidad más profunda.
     </div>
   </div>
 
   <div class="card" onclick="toggle(this)">
-    <div class="title">Ideas principales</div>
+    <div class="title">Espiritualidad rara</div>
     <div class="text">
-      - La atención es el acto moral más puro.
-      - El sufrimiento puede destruir el "yo".
-      - El poder tiende a corromper.
-      - La verdad requiere sacrificio.
+      Tenía ideas cercanas al cristianismo pero nunca quiso pertenecer oficialmente a la Iglesia.
     </div>
   </div>
 
   <div class="card" onclick="toggle(this)">
-    <div class="title">La gravedad y la gracia</div>
+    <div class="title">Ideas clave</div>
     <div class="text">
-      Su obra más famosa.
-      Mezcla filosofía y espiritualidad.
-      Habla de cómo el sufrimiento puede vaciar el ego.
+      - Atención = amor puro<br>
+      - El ego es un obstáculo<br>
+      - La verdad duele<br>
+      - El poder corrompe
     </div>
   </div>
 
   <div class="card" onclick="toggle(this)">
-    <div class="title">Echar raíces</div>
+    <div class="title">Muerte</div>
     <div class="text">
-      pertenencia, identidad, verdad, justicia.
+      Murió con 34 años debilitada por su propia disciplina extrema.
     </div>
   </div>
 
   <div class="card" onclick="toggle(this)">
-    <div class="title">Otros escritos</div>
+    <div class="title">Obras</div>
     <div class="text">
-      diarios de fábrica, La Ilíada o el poema de la fuerza, Cuadernos.
+      - La gravedad y la gracia<br>
+      - Echar raíces<br>
+      - Cuadernos
     </div>
   </div>
 
   <div class="card" onclick="toggle(this)">
     <div class="title">Dato curioso</div>
     <div class="text">
-      Intentaba eliminar su ego constantemente.
+      Intentaba literalmente desaparecer su ego.
     </div>
   </div>
 
@@ -234,31 +208,15 @@ button {
 
 </div>
 
-<!-- TIRITAS -->
 <div class="strip" id="s1">?</div>
 <div class="strip" id="s2">...</div>
 <div class="strip" id="s3">!</div>
+<div class="strip" id="s4">★</div>
 
-<!-- NUEVA INFO AL ARRASTRAR -->
-<div class="revealBox" id="r1">Vivía la filosofía como una obsesión personal.</div>
-<div class="revealBox" id="r2">Veía el sufrimiento como una puerta a la verdad.</div>
-<div class="revealBox" id="r3">Incluso hoy, muchos la ven como demasiado extrema.</div>
-
-<!-- POPUPS ORIGINALES -->
-<div class="popup" id="p1">
-Se obsesionaba con vivir la verdad.
-<br><button onclick="closePopup(this)">Cerrar</button>
-</div>
-
-<div class="popup" id="p2">
-El sufrimiento revela la realidad.
-<br><button onclick="closePopup(this)">Cerrar</button>
-</div>
-
-<div class="popup" id="p3">
-Filósofa demasiado extrema.
-<br><button onclick="closePopup(this)">Cerrar</button>
-</div>
+<div class="revealBox" id="r1">Vivía la filosofía como obsesión.</div>
+<div class="revealBox" id="r2">El sufrimiento revela verdad.</div>
+<div class="revealBox" id="r3">Demasiado extrema para muchos.</div>
+<div class="revealBox" id="r4">Influyó en filosofía y teología moderna.</div>
 
 <script>
 let opened = 0;
@@ -275,10 +233,11 @@ function update(){
   document.getElementById("fill").style.width = percent + "%";
 }
 
-function openPopup(id){ document.getElementById(id).classList.add("show"); }
-function closePopup(el){ el.parentElement.classList.remove("show"); }
+function reveal(el, index){
+  el.classList.add("revealed");
+  document.getElementById("r"+(index+1)).classList.add("show");
+}
 
-/* DRAG + REVEAL */
 document.querySelectorAll(".strip").forEach((el, index) => {
   let offsetX, offsetY, isDown = false;
 
@@ -290,17 +249,31 @@ document.querySelectorAll(".strip").forEach((el, index) => {
 
   document.addEventListener("mousemove", e => {
     if(!isDown) return;
-
     el.style.left = (e.clientX - offsetX) + "px";
     el.style.top = (e.clientY - offsetY) + "px";
-
     if(Math.abs(e.movementX) > 8 || Math.abs(e.movementY) > 8){
-      el.classList.add("revealed");
-      document.getElementById("r"+(index+1)).classList.add("show");
+      reveal(el, index);
     }
   });
 
   document.addEventListener("mouseup", () => isDown = false);
+
+  el.addEventListener("touchstart", e => {
+    isDown = true;
+    const touch = e.touches[0];
+    offsetX = touch.clientX - el.offsetLeft;
+    offsetY = touch.clientY - el.offsetTop;
+  });
+
+  document.addEventListener("touchmove", e => {
+    if(!isDown) return;
+    const touch = e.touches[0];
+    el.style.left = (touch.clientX - offsetX) + "px";
+    el.style.top = (touch.clientY - offsetY) + "px";
+    reveal(el, index);
+  });
+
+  document.addEventListener("touchend", () => isDown = false);
 });
 </script>
 
